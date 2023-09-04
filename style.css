@@ -1,0 +1,152 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.body {
+  cursor: pointer;
+}
+
+.table {
+  border: 1px solid black;
+  width: 300px;
+  height: 350px;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.head {
+  border: 1px solid black;
+  height: 50px;
+  width: 100%;
+}
+
+.td {
+  border: 1px solid black;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn, .btnRes {
+  cursor: pointer;
+  background-color: rgb(54, 54, 54);
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  margin-top: 30px;
+}
+.btn:hover, .btnRes:hover {
+  background-color: rgb(43, 43, 43);
+}
+.btn:active, .btnRes:active {
+  transform: scale(1.05);
+}
+
+.btnRes {
+  margin-top: 15px;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.styleRadio {
+  position: relative;
+  margin: 10px;
+}
+.styleRadio::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border: 1px solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.styleRadio::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 250ms linear;
+}
+
+input[type=radio]:checked + label .styleRadio::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.blue {
+  background-color: rgb(25, 132, 238);
+}
+
+.green {
+  background-color: rgb(5, 174, 107);
+}
+
+.red {
+  background-color: rgb(252, 76, 79);
+}
+
+.modalWindow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.455);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.content {
+  padding: 20px 50px;
+  background-color: #fff;
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: color 200ms linear;
+  font-size: 20px;
+  color: rgb(34, 34, 34);
+}
+.cross:hover {
+  color: black;
+}
+.cross:active {
+  transform: scale(1.05);
+}/*# sourceMappingURL=style.css.map */
