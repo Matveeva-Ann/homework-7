@@ -1,5 +1,7 @@
 const td = document.querySelectorAll(".td");
 const tbody = document.querySelector(".body");
+const computer = document.querySelector('.computer');
+const user = document.querySelector('.user');
 let delay = 1500;
 const radioButtons = document.querySelectorAll(
   'input[type="radio"][name="level"]'
@@ -10,7 +12,6 @@ const btnStart = document.querySelector(".btn");
 const btnRes = document.querySelector(".btnRes");
 let red = 0;
 let green = 0;
-
 
 const levelArr = [
   {
@@ -52,9 +53,14 @@ radioButtons.forEach((radioButton) => {
 
 btnStart.addEventListener("click", function () {
   const sortArr = randomArr();
+  const levels = document.querySelectorAll('.inputs__item');
   for (let i = 0; i < sortArr.length; i++) {
     draw(td[sortArr[i]], delay * i);
   }
+  btnStart.setAttribute("disabled", "disabled");
+  levels.forEach(elem =>{
+    elem.setAttribute("disabled", "disabled");
+  })
 });
 
 let count = 0;
@@ -69,6 +75,7 @@ function draw(elem, time) {
       elem.classList.add("red");
       elem.classList.remove("blue");
       red++;
+      computer.textContent = red;
     }
     count++;
     if (count === 36) {
@@ -82,6 +89,7 @@ tbody.addEventListener("click", function (event) {
   if (event.target.className.includes("blue")) {
     event.target.classList.add("green");
     green++;
+    user.textContent = green;
   } 
 });
 
@@ -92,15 +100,13 @@ btnRes.addEventListener("click", function () {
 function voicingResult() {
   const modalWindow = document.querySelector(".modalWindow");
   const cross = document.querySelector(".cross");
-  const scores = document.querySelector('.scores');
   modalWindow.style.display = "flex";
   if (red < green) {
     result.textContent = 'Ви перемогли 😃 ';
-    scores.textContent = `Ваша кількість балів: ${green} з 36`;
-  } else {
+  } else if (red > green) {
     result.textContent = 'Ви програли 😞 ';
-    scores.textContent = `Ваша кількість балів: ${green} з 36`;
-
+  } else{
+    result.textContent = `Нічия (◕‿◕) `;
   }
   cross.addEventListener("click", () => {
     location.reload();

@@ -11,19 +11,41 @@
 <body>
 
   <div class="container">
-    <fieldset>
-      <div class="inputs">
-        <input type="radio" name="level" id="easy" checked>
-        <label for="easy"><span class="styleRadio"></span> Easy </label>
-        <input type="radio" name="level" id="medium">
-        <label for="medium"> <span class="styleRadio"></span> Medium </label>
-        <input type="radio" name="level" id="heavy">
-        <label for="heavy"> <span class="styleRadio"></span> Heavy</label>
-      </div>
+ 
+      <fieldset>
+        <div class="inputs">
+          <p class="inputs__title">Choose game level:</p>
+          <input type="radio" name="level" id="easy" class="inputs__item" checked>
+          <label for="easy"><span class="styleRadio"></span> Easy </label>
+          <input type="radio" name="level" id="medium" class="inputs__item">
+          <label for="medium"> <span class="styleRadio"></span> Medium </label>
+          <input type="radio" name="level" id="heavy" class="inputs__item">
+          <label for="heavy"> <span class="styleRadio"></span> Heavy</label>
+        </div>
+  
+        <div class="wrapper">
+          <button type="button" class="btn">Start</button>
+          <button type="button" class="btnRes">Reset</button>
+        </div>
 
-      <button type="button" class="btn">Start</button>
-      <button type="button" class="btnRes">Reset</button>
-    </fieldset>
+        <div class="results">
+          <h4 class="results__title">Score</h4>
+          <div style="display: flex; justify-content: space-around;">
+            <div class="result__wrapper">
+              <span class="result__name">Computer</span>
+              <span class="computer">0</span>
+            </div>
+            <div class="result__wrapper">
+              <span class="result__name">User</span>
+              <span class="user">0</span>
+            </div>
+          </div>
+         
+        </div>
+      </fieldset>
+  
+   
+
 
 
     <table class="table">
@@ -90,7 +112,6 @@
   <div class="content">
     <span class="cross">X</span>
     <h3>Результат гри: <span class="result"></span></h3>
-    <p class="scores"></p>
   </div>
 </div>
 
