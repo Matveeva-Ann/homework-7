@@ -87,7 +87,7 @@ function draw(elem, time) {
 
 tbody.addEventListener("click", function (event) {
   event.preventDefault();
-  if (event.target.className.includes("blue")) {
+  if (event.target.className.includes("blue") && !event.target.className.includes("green")) {
     event.target.classList.add("green");
     green++;
     user.textContent = green;
