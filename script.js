@@ -24,8 +24,12 @@ const levelArr = [
   },
   {
     btnChecked: "heavy",
-    delay: 600,
+    delay: 500,
   },
+  {
+    btnChecked: 'hardcore',
+    delay:400,
+  }
 ];
 
 function randomArr() {
@@ -45,9 +49,7 @@ function randomArr() {
 radioButtons.forEach((radioButton) => {
   radioButton.addEventListener("change", (event) => {
     const selectedValue = event.target.id;
-    delay = levelArr.filter((elem) => elem.btnChecked === selectedValue)[0]
-      .delay;
-  });
+    delay = levelArr.filter((elem) =>  elem.btnChecked === selectedValue)[0].delay;});
 });
 
 btnStart.addEventListener("click", function () {
