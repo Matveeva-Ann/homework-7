@@ -45,7 +45,6 @@ function randomArr() {
 radioButtons.forEach((radioButton) => {
   radioButton.addEventListener("change", (event) => {
     const selectedValue = event.target.id;
-    console.log(selectedValue);
     delay = levelArr.filter((elem) => elem.btnChecked === selectedValue)[0]
       .delay;
   });
